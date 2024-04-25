@@ -1,0 +1,209 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7601,        201]
+NotebookOptionsPosition[      6651,        175]
+NotebookOutlinePosition[      7077,        192]
+CellTagsIndexPosition[      7034,        189]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Hartree-Fock Theory", "Title",
+ CellChangeTimes->{{3.92039835693388*^9, 
+  3.92039839278424*^9}},ExpressionUUID->"0ef283b7-88b0-4738-8d10-\
+094f239ab657"],
+
+Cell["Calculating nuclear repulsion energy w/ Vnn", "Subtitle",
+ CellChangeTimes->{{3.9203983999116707`*^9, 3.920398401265818*^9}, {
+  3.920399014783703*^9, 
+  3.920399061597185*^9}},ExpressionUUID->"f2683d52-d034-4b05-bb34-\
+2baca4079099"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vnn", "[", 
+    RowBox[{"Z_", ",", "pos_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"i", ",", " ", "j"}], "}"}], ",", "\n", "\t", 
+     RowBox[{
+      RowBox[{"Enn", " ", "=", " ", "0"}], ";", "\n", "\t", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", " ", 
+        RowBox[{"i", "<=", 
+         RowBox[{"Length", "[", "Z", "]"}]}], ",", " ", 
+        RowBox[{"i", "++"}], ",", "\n", "\t\t", 
+        RowBox[{"For", "[", 
+         RowBox[{
+          RowBox[{"j", "=", 
+           RowBox[{"i", "+", "1"}]}], ",", " ", 
+          RowBox[{"j", "<=", 
+           RowBox[{"Length", "[", "Z", "]"}]}], ",", " ", 
+          RowBox[{"j", "++"}], ",", "\n", "\t\t\t", 
+          RowBox[{
+           RowBox[{"Rij", " ", "=", " ", 
+            RowBox[{"Sqrt", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"pos", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"i", ",", "1"}], "]"}], "]"}], "-", 
+                 RowBox[{"pos", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"j", ",", "1"}], "]"}], "]"}]}], ")"}], "^", "2"}],
+               "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"pos", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"i", ",", "2"}], "]"}], "]"}], "-", 
+                 RowBox[{"pos", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"j", ",", "2"}], "]"}], "]"}]}], ")"}], "^", "2"}],
+               "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"pos", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"i", ",", "3"}], "]"}], "]"}], "-", 
+                 RowBox[{"pos", "[", 
+                  RowBox[{"[", 
+                   RowBox[{"j", ",", "3"}], "]"}], "]"}]}], ")"}], "^", 
+               "2"}]}], "]"}]}], ";", "\n", "\t\t\t", 
+           RowBox[{"Enn", " ", "+=", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"Z", "[", 
+                RowBox[{"[", "i", "]"}], "]"}], "*", 
+               RowBox[{"Z", "[", 
+                RowBox[{"[", "j", "]"}], "]"}]}], ")"}], "/", "Rij"}]}], 
+           ";"}]}], "\n", "\t\t", "]"}]}], "\n", "\t", "]"}], ";", "\n", "\t",
+       "Enn"}]}], "\t\t", "\n", "]"}]}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{"test", " ", 
+    RowBox[{"example", ":", " ", "H2"}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{"Z", "=", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pos", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.7", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2.7"}], ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2.7", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "2.7"}], ",", "0"}], "}"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{"Vnn", "[", 
+  RowBox[{"Z", ",", " ", "pos"}], "]"}]}], "Code",
+ CellChangeTimes->{{3.920399074163328*^9, 3.920399243623489*^9}, {
+   3.920399297295917*^9, 3.920399322852507*^9}, {3.9203994215377417`*^9, 
+   3.920399673421413*^9}, {3.9203997157844143`*^9, 3.92039994311474*^9}, {
+   3.920400125982543*^9, 3.9204001413131247`*^9}, {3.92040017616961*^9, 
+   3.9204003601005917`*^9}, {3.920400449415773*^9, 3.920400450455317*^9}, {
+   3.920400483974894*^9, 3.920400500532551*^9}, {3.920400740397091*^9, 
+   3.920400842616704*^9}, {3.920400879834337*^9, 3.920400955853436*^9}, {
+   3.9204020515238457`*^9, 3.920402066696909*^9}, {3.920402131670196*^9, 
+   3.920402184400218*^9}, {3.920402214576235*^9, 3.9204023175161867`*^9}, {
+   3.920402353793828*^9, 3.920402357552803*^9}, {3.9204024062118177`*^9, 
+   3.920402475219778*^9}, {3.920402633292153*^9, 3.920402635553708*^9}, {
+   3.920402781955452*^9, 3.920403044895941*^9}, {3.920403086176772*^9, 
+   3.920403127564294*^9}, {3.920403171400732*^9, 3.9204032188150682`*^9}, {
+   3.920403455905636*^9, 3.920403636442471*^9}, 3.92040368499302*^9, {
+   3.9204037240827713`*^9, 3.920403734207243*^9}, {3.920403826124229*^9, 
+   3.920403854802208*^9}, {3.92040395654526*^9, 3.9204039577933064`*^9}, {
+   3.920404028446167*^9, 3.920404028490684*^9}, {3.920404536979129*^9, 
+   3.9204046339059973`*^9}, {3.9204057515002117`*^9, 3.920405757800268*^9}, {
+   3.920406336557061*^9, 3.9204063373183117`*^9}},
+ CellLabel->
+  "In[345]:=",ExpressionUUID->"97da5922-c111-421c-954f-a52b28e64d8e"],
+
+Cell[BoxData["10.306824861017105`"], "Output",
+ CellChangeTimes->{3.920403855452232*^9, 3.9204040299872217`*^9, 
+  3.92040498743921*^9, 3.920405759738222*^9, 3.920406338978984*^9},
+ CellLabel->
+  "Out[348]=",ExpressionUUID->"c3ccbca0-d896-4bb5-90a1-e800b52ad6d2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Kinetic energy of electron Te", "Subtitle",
+ CellChangeTimes->{{3.920406413198185*^9, 3.920406435087023*^9}, {
+  3.920406482320356*^9, 
+  3.920406513412223*^9}},ExpressionUUID->"f84ef5e2-3f98-4f10-b6e0-\
+f598ee684bda"],
+
+Cell[BoxData[""], "Code",
+ CellChangeTimes->{{3.92040652455151*^9, 3.920406525715736*^9}, {
+  3.920406590593041*^9, 3.9204065979481363`*^9}, {3.920407309859969*^9, 
+  3.920407310351569*^9}, {3.920408243265029*^9, 
+  3.920408244363714*^9}},ExpressionUUID->"5f823b88-0d24-499c-962d-\
+c5ccb79002cc"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>2. Inherited,
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"64b238cd-f548-42c5-b070-48ab340ed74c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 160, 3, 194, "Title",ExpressionUUID->"0ef283b7-88b0-4738-8d10-094f239ab657"],
+Cell[743, 27, 240, 4, 106, "Subtitle",ExpressionUUID->"f2683d52-d034-4b05-bb34-2baca4079099"],
+Cell[CellGroupData[{
+Cell[1008, 35, 4789, 114, 598, "Code",ExpressionUUID->"97da5922-c111-421c-954f-a52b28e64d8e"],
+Cell[5800, 151, 263, 4, 67, "Output",ExpressionUUID->"c3ccbca0-d896-4bb5-90a1-e800b52ad6d2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6100, 160, 224, 4, 106, "Subtitle",ExpressionUUID->"f84ef5e2-3f98-4f10-b6e0-f598ee684bda"],
+Cell[6327, 166, 296, 5, 103, "Code",ExpressionUUID->"5f823b88-0d24-499c-962d-c5ccb79002cc"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

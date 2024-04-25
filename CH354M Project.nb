@@ -1,0 +1,163 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4759,        155]
+NotebookOptionsPosition[      3873,        128]
+NotebookOutlinePosition[      4299,        145]
+CellTagsIndexPosition[      4256,        142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Time-Dependent Harmonic Oscillator ", "Title",
+ CellChangeTimes->{{3.920495532728478*^9, 
+  3.9204955576009483`*^9}},ExpressionUUID->"aa1f4401-8e8f-4f61-ad31-\
+f5f40dee1ef2"],
+
+Cell[CellGroupData[{
+
+Cell["CH354M Project", "Chapter",
+ CellChangeTimes->{{3.920495562421819*^9, 3.920495578531436*^9}, {
+  3.920635352408074*^9, 
+  3.920635367183482*^9}},ExpressionUUID->"aabc32ae-c13b-4d05-96af-\
+a40c916d0b1f"],
+
+Cell[CellGroupData[{
+
+Cell["Making the Time Independent Harmonic Oscillator", "Section",
+ CellChangeTimes->{{3.9206353821729717`*^9, 
+  3.92063539986861*^9}},ExpressionUUID->"202fd778-1189-4957-a274-\
+742f229df3ef"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"x", " ", "=", " ", 
+   RowBox[{"Range", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "15.0"}], "*", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "11"}]}]}], ",", " ", 
+     RowBox[{"15.0", "*", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "11"}]}]}], ",", " ", 
+     RowBox[{"0.15", "*", 
+      RowBox[{"10", "^", 
+       RowBox[{"-", "11"}]}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"h_bar", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"6.626", "e"}], "-", 
+     RowBox[{"34", "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", 
+        RowBox[{"np", ".", "pi"}]}], ")"}]}]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"modified", " ", 
+    RowBox[{"plank", "'"}], "s", " ", "constant", " ", 
+    RowBox[{"(", 
+     RowBox[{"J", "*", "s"}], ")"}]}], "*)"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"1.660540199", "e"}], "-", "27"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"mass", " ", 
+    RowBox[{"(", "kg", ")"}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"c", " ", "=", " ", 
+    RowBox[{"2.998", "e8"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"speed", " ", "of", " ", "light", " ", 
+    RowBox[{"(", 
+     RowBox[{"m", "/", "s"}], ")"}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", " ", "=", " ", 
+    RowBox[{"c", "*", "1600", "e2"}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"angular", " ", "velocity", " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", "s"}], ")"}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Xi", " ", "=", " ", 
+    RowBox[{
+     RowBox[{"np", ".", "sqrt"}], 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"m", "*", "w"}], ")"}], " ", "/", " ", "h_bar"}], ")"}], "*", 
+     "x"}]}], ";"}], " ", 
+  RowBox[{"(*", "dimensionless", "*)"}]}], "\n", 
+ RowBox[{"lenx", " ", "=", " ", 
+  RowBox[{"Dimensions", "[", "x", "]"}]}], "\n"}], "Code",
+ CellChangeTimes->{{3.920635517872477*^9, 3.92063562604871*^9}, {
+  3.9206356642060013`*^9, 3.920635676125819*^9}, {3.920635871374161*^9, 
+  3.920635871449439*^9}, {3.920636026152273*^9, 3.920636050666317*^9}, {
+  3.92063611812567*^9, 
+  3.920636173923851*^9}},ExpressionUUID->"d3613dbc-74b6-4ddc-86cb-\
+349bb0a3999b"],
+
+Cell[BoxData[
+ RowBox[{"{", "201", "}"}]], "Output",
+ CellChangeTimes->{{3.920635679227034*^9, 3.9206356793778877`*^9}, 
+   3.920635913606813*^9, {3.920636029298308*^9, 3.920636054493896*^9}, {
+   3.92063612988441*^9, 3.92063615775486*^9}},
+ CellLabel->"Out[49]=",ExpressionUUID->"adab5a02-d573-470f-a5b7-0073e53f74a7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 3}},
+Magnification:>2. Inherited,
+FrontEndVersion->"14.0 for Mac OS X ARM (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"91b64b4e-724f-47ec-addf-310378adfabf"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 180, 3, 316, "Title",ExpressionUUID->"aa1f4401-8e8f-4f61-ad31-f5f40dee1ef2"],
+Cell[CellGroupData[{
+Cell[785, 29, 208, 4, 136, "Chapter",ExpressionUUID->"aabc32ae-c13b-4d05-96af-a40c916d0b1f"],
+Cell[CellGroupData[{
+Cell[1018, 37, 193, 3, 134, "Section",ExpressionUUID->"202fd778-1189-4957-a274-742f229df3ef"],
+Cell[CellGroupData[{
+Cell[1236, 44, 2263, 71, 370, "Code",ExpressionUUID->"d3613dbc-74b6-4ddc-86cb-349bb0a3999b"],
+Cell[3502, 117, 319, 5, 67, "Output",ExpressionUUID->"adab5a02-d573-470f-a5b7-0073e53f74a7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
